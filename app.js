@@ -27,12 +27,6 @@ class BaseInfraResources extends cdk.Stack {
     });
     // The security group that defines network level access to the cluster
     this.securityGroup = new ec2.SecurityGroup(this, `${id}-security-group`, { vpc: this.vpc });
-    // this.connections = new ec2.Connections({
-    //   securityGroups: [this.securityGroup],
-    //   defaultPortRange: new ec2.TcpPort(6379)
-    // });
-
-    // mySecurityGroup.addIngressRule(new ec2.AnyIPv4(), new ec2.TcpPort(22), 'allow ssh access from the world'); //new ec2.CidrIPv4(this.vpc.cidr)
     this.securityGroup.addIngressRule(new ec2.AnyIPv4(), new ec2.TcpPort(6379), 'redis security group');
 
     this.redisCluster = new elasticache.CfnCacheCluster(this, `${id}-cluster`, {
@@ -46,7 +40,6 @@ class BaseInfraResources extends cdk.Stack {
         this.securityGroup.securityGroupId
       ]
     });
-
   }
 }
 
@@ -70,7 +63,6 @@ class chatroom extends cdk.Stack {
       },
       createLogs: true
     })
-
     // set targetgroup to be sticky as we have multiple tasks running websocket!
     this.chatroom.targetGroup.enableCookieStickiness(1000)
 
@@ -83,7 +75,6 @@ class chatroom extends cdk.Stack {
       containerPort: 2000,
       protocol: ecs.Protocol.Udp
     })
-
     //xray iam permission
     this.chatroom.service.taskDefinition.taskRole.addToPolicy(
       new iam.PolicyStatement()
@@ -91,19 +82,14 @@ class chatroom extends cdk.Stack {
         .allow()
         .addResource('*')
     )
-
     // new cdk.CfnOutput(this, 'LoadBalancerDNS', { value: this.chatroom.loadBalancer.loadBalancerDnsName });
   }
 }
 
-
-
 class App extends cdk.App {
   constructor(argv) {
     super(argv);
-
     this.baseResources = new BaseInfraResources(this, 'Chatroom-base-infra');
-
     this.chatroom = new chatroom(this, 'chatroom', {
       cluster: this.baseResources.cluster,
       redisCluster: this.baseResources.redisCluster
@@ -111,5 +97,4 @@ class App extends cdk.App {
 
   }
 }
-
 new App().run();
