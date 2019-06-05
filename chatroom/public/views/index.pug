@@ -1,0 +1,9 @@
+extends master
+
+block content
+    div.container
+        h1.title=title
+        div.joinbox
+            form.join
+                input.username(type="text", placeholder="Enter your username", required="required")
+                input.submit(type="submit", value="Join Room")

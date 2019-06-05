@@ -1,0 +1,194 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, p, textarea, h1, h2 {
+    font-family: Raleway, "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+}
+
+body {
+    background: #23074d; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FDC830, #F37335); /* Chrome 10-25, Safari 5.1-6  https://uigradients.com/#EveningSunshine*/
+    background: linear-gradient(to right, #FDC830,#F37335); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+    position: relative;
+}
+
+h1 {
+    font-size: 6rem;
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.joinbox {
+    max-width: 500px;
+    border: 2px solid #ffffff;
+    padding: 4rem;
+    width: 70%;
+    margin: 5rem auto 0;
+    border-radius: 5px;
+}
+
+.joinbox .username {
+    display: block;
+    width: 100%;
+    margin: auto;
+    padding: 1.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+.joinbox .submit {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: none;
+    /*border: 2px solid #ffffff;*/
+    display: block;
+    width: 100%;
+    margin: 3rem auto 0;
+    color: #772D40;
+    font-size: 2rem;
+    transition: all ease 500ms;
+}
+
+.joinbox .submit:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.joinbox .submit[disabled="disabled"] {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.alert {
+    background-color: #cab0a9;
+    color: #772D40;
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+}
+
+.clearfix {
+    content: ' ';
+    height: 0;
+    clear: both;
+    position: relative;
+}
+
+.room {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.chat {
+    width: 68%;
+    margin: auto 1%;
+    background-color: #ffffff;
+    padding: 2rem;
+    color: #772D40;
+    display: inline-block;
+    overflow-y: auto;
+    max-height: 500px;
+    vertical-align: bottom;
+}
+
+.chat .item {
+    padding: 0.75rem 0;
+    display: block;
+    border-bottom: thin solid #f0f0f0;
+    font-size: 1.4rem;
+}
+
+.chat .item:last-child {
+    border-bottom: none;
+}
+
+.chat .user {
+    color: #23074d;
+    display: block;
+    font-weight: 700;
+}
+
+.chat .system {
+    color: #cc5333;
+    display: block;
+    font-weight: 700;
+}
+
+.users {
+    background-color: #ffffff;
+    margin: auto 1%;
+    width: 28%;
+    color: #772D40;
+    display: inline-block;
+    font-size: 1.6rem;
+    max-height: 500px;
+    overflow-y: auto;
+    vertical-align: bottom;
+}
+
+.users .title {
+    background-color: #772D40;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    display: block;
+    font-size: 1.8rem;
+}
+
+.users .item {
+    padding: 1.2rem 2rem;
+    display: block;
+    border-bottom: thin solid #f0f0f0;
+    font-size: 1.5rem;
+}
+
+.users .item:last-child {
+    border-bottom: none;
+}
+
+.send {
+    margin-top: 2rem;
+    display: block;
+    background-color: #ffffff;
+    padding: 2rem;
+}
+
+.send .message {
+    display: inline-block;
+    width: 72%;
+    margin-right: 3%;
+    background-color: #f0f0f0;
+    border: none;
+    font-size: 1.6rem;
+    padding: 1.5rem;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.send .submit {
+    display: inline-block;
+    width: 25%;
+    background-color: #772D40;
+    padding: 1.5rem;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    vertical-align: bottom;
+    transition: all ease 500ms;
+}

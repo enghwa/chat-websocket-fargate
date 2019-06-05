@@ -1,0 +1,24 @@
+{
+  "name": "chat-room",
+  "version": "1.0.0",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.0",
+    "express": "~4.15.2",
+    "node-env-file": "^0.1.8",
+    "path": "^0.12.7",
+    "pug": "~2.0.0-rc.3",
+    "redis": "^2.8.0",
+    "aws-xray-sdk": "latest",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "nodemon": "^1.12.1"
+  },
+  "scripts": {
+    "babel-node": "babel-node --presets=env",
+    "start": "nodemon --exec npm run babel-node -- ./server/server.js"
+  }
+}

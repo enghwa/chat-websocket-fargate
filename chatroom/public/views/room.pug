@@ -1,0 +1,17 @@
+extends master
+
+block content
+    div.room
+        div.chat
+        div.users
+            h2.title Active Users
+        div.clearfix
+        div.sendbox
+            form.send
+                textarea.message(placeholder='Type your message here', required='required')
+                input.name(type='hidden', value=user)
+                input.submit(type='submit', value='Send')
+
+block script
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/chat.js')

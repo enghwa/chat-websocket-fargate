@@ -1,0 +1,5 @@
+node_modules
+synth
+cdk.context.json
+cdk.out
+README-detail.md
