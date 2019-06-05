@@ -28,3 +28,8 @@ npx cdk deploy --require-approval never
 
 ```
 
+
+### remove all resources:
+```bash
+npx cdk destroy
+```
