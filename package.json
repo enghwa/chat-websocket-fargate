@@ -2,8 +2,8 @@
   "description": "cdk quick start",
   "devDependencies": {
     "@aws-cdk/aws-ecs": "^0.33.0",
-    "@aws-cdk/cdk": "latest",
-    "aws-cdk": "latest"
+    "@aws-cdk/cdk": "^0.33.0",
+    "aws-cdk": "^0.33.0"
   },
   "scripts": {
     "diff": "cdk diff",
