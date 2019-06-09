@@ -151,8 +151,11 @@ export let deleteUser = router.delete("/user", (req, res) => {
 });
 
 export let createMessage = router.post("/message", (req, res) => {
+    //  let regex =/javascript/ig;
+    let regex = /script/ig;
+
     let msg = {
-        message: req.body.msg,
+        message: req.body.msg.replace(regex,'blockquote'),
         user: req.body.user
     };
 
