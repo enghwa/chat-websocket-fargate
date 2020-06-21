@@ -1,5 +1,12 @@
+*.js
+!jest.config.js
+*.d.ts
 node_modules
-synth
-cdk.context.json
+
+# CDK asset staging directory
+.cdk.staging
 cdk.out
-README-detail.md
+
+# Parcel build directories
+.cache
+.build
