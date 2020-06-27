@@ -1,6 +1,12 @@
 
 ## Architecture:
-ref to fargate-redis-chat.pptx.
+
+![Architecture](ecsfargatechat.png)
+
+Current CDK script uses a dockerize Redis running on Fargate, it is not durable or HA.
+Challenge: Change this CDK code to adopt Amazon ElastiCache!
+
+
 
 ### get nodejs
 ```bash
