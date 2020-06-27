@@ -19,6 +19,7 @@ nvm alias default v8.12.0
 ### install node modules
 ```bash
 npm install
+npm run build
 ```
 
 ### show the aw resources that cdk will create
